@@ -1,0 +1,14 @@
+﻿<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SaveUpp.View.MainPage"
+             Title="Home">
+
+    <StackLayout Padding="20" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
+        <Label Text="SaveUp" FontSize="30" HorizontalOptions="Center" />
+        <Label Text="Willkommen bei SaveUp. Erfassen Sie Ihre gesparten Ausgaben um immer einen perfekten Überblick über die Finanzen zu haben."
+               FontSize="16" HorizontalOptions="Center" Margin="0,20,0,20" />
+
+        <Button Text="Neues Produkt" Command="{Binding NavigateToNewProductCommand}" WidthRequest="200" HeightRequest="50" />
+        <Button Text="Gespeicherte Produkte" Command="{Binding NavigateToSavedProductsCommand}" WidthRequest="200" HeightRequest="50" Margin="0,20,0,0" />
+    </StackLayout>
+</ContentPage>

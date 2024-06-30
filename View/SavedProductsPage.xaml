@@ -1,0 +1,26 @@
+﻿<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SaveUpp.View.SavedProductsPage"
+             Title="Gespeicherte Produkte">
+
+    <StackLayout Padding="20" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
+        <Label Text="Gespeicherte Produkte" FontSize="30" HorizontalOptions="Center" />
+
+        <ListView ItemsSource="{Binding Expenses}" HeightRequest="200">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout Orientation="Horizontal" Padding="10">
+                            <Label Text="{Binding Description}" VerticalOptions="Center" />
+                            <Label Text="{Binding Price, StringFormat='{0:C}'}" VerticalOptions="Center" HorizontalOptions="EndAndExpand" />
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+        <Label Text="{Binding TotalAmount, StringFormat='Gesamt: {0:C}'}" FontSize="20" HorizontalOptions="Center" Margin="0,20,0,0" />
+
+        <Button Text="Löschen" Command="{Binding ClearExpensesCommand}" WidthRequest="200" />
+    </StackLayout>
+</ContentPage>
